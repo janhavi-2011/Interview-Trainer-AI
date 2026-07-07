@@ -1,0 +1,97 @@
+[
+  {
+    "id": "beh_001",
+    "category": "Teamwork",
+    "topic": "Collaboration",
+    "difficulty": "Medium",
+    "concept": "Collaboration questions assess how you work with others toward shared goals. Emphasize communication, adaptability, and respect for diverse perspectives. Use STAR to describe how you contributed to a team success. Highlight specific actions you took to improve team dynamics or output.",
+    "common_questions": [
+      "Tell me about a time you worked on a team project",
+      "How do you handle working with difficult team members?",
+      "Describe a time you helped a teammate"
+    ],
+    "key_points": [
+      "Emphasize communication and listening",
+      "Show adaptability to different work styles",
+      "Highlight your specific contribution",
+      "Credit the team for collective success"
+    ],
+    "sample_answer": "On a cross-team project, our API was blocked by another team's service. I set up a daily 15-minute sync with their lead, shared our requirements doc early, and offered to write integration tests on their behalf. The collaboration accelerated delivery by 2 weeks."
+  },
+  {
+    "id": "beh_002",
+    "category": "Problem Solving",
+    "topic": "Creative Problem Solving",
+    "difficulty": "Hard",
+    "concept": "Creative problem solving involves finding unconventional solutions when standard approaches fail. Describe a situation where the obvious solution didn't work and you had to think differently. Highlight your analytical process, how you gathered input, and the innovative approach you took. Quantify the impact.",
+    "common_questions": [
+      "Tell me about a time you solved a problem creatively",
+      "Describe a situation where you had to think outside the box",
+      "When did you find an unconventional solution?"
+    ],
+    "key_points": [
+      "Describe why standard approaches failed",
+      "Show your analytical process",
+      "Explain the creative solution",
+      "Quantify the positive impact"
+    ],
+    "sample_answer": "Our monitoring system was generating 10,000 alerts/day, causing alert fatigue. Instead of adding more filters, I implemented ML-based alert clustering that grouped related incidents. This reduced actionable alerts to 200/day while catching all critical issues."
+  },
+  {
+    "id": "beh_003",
+    "category": "Adaptability",
+    "topic": "Dealing with Change",
+    "difficulty": "Medium",
+    "concept": "Adaptability questions test how you handle ambiguity, shifting priorities, and unexpected challenges. Show that you remain calm, reassess priorities quickly, communicate changes to stakeholders, and find opportunities within the change. Employers want people who thrive in dynamic environments.",
+    "common_questions": [
+      "Tell me about a time you had to adapt to a major change",
+      "How do you handle shifting priorities?",
+      "Describe a time when requirements changed mid-project"
+    ],
+    "key_points": [
+      "Stay calm and assess the new situation",
+      "Re-prioritize quickly and communicate",
+      "Find opportunity in the change",
+      "Show flexibility without losing focus"
+    ],
+    "sample_answer": "Mid-project, our tech stack was changed from Python to Go due to performance requirements. I spent a weekend learning Go basics, created a shared learning roadmap for the team, and we pair-programmed critical components. We delivered on time with 40% better performance than the original plan."
+  },
+  {
+    "id": "beh_004",
+    "category": "Communication",
+    "topic": "Explaining Technical Concepts",
+    "difficulty": "Medium",
+    "concept": "Communication questions evaluate your ability to convey complex ideas clearly to different audiences. Show that you adjust your communication style based on the audience, use analogies, avoid jargon with non-technical stakeholders, and verify understanding. Strong communicators bridge the gap between technical and business teams.",
+    "common_questions": [
+      "How do you explain technical concepts to non-technical people?",
+      "Tell me about a time you had to present complex information",
+      "How do you ensure your team understands requirements?"
+    ],
+    "key_points": [
+      "Know your audience and adjust language",
+      "Use analogies and visual aids",
+      "Avoid jargon with non-technical people",
+      "Check for understanding, encourage questions"
+    ],
+    "sample_answer": "When presenting our migration plan to the executive team, I used a house renovation analogy: 'We're replacing the foundation while keeping the house standing.' I showed a simple before/after diagram with business metrics rather than architecture diagrams. The board approved the plan in one meeting."
+  },
+  {
+    "id": "beh_005",
+    "category": "Time Management",
+    "topic": "Prioritization",
+    "difficulty": "Medium",
+    "concept": "Prioritization questions assess your ability to manage competing demands. Describe frameworks you use (Eisenhower matrix, impact/effort, MoSCoW). Show how you distinguish urgent from important, when you say no, how you manage stakeholder expectations, and how you re-evaluate priorities as situations change.",
+    "common_questions": [
+      "How do you prioritize competing deadlines?",
+      "Tell me about a time you had too much on your plate",
+      "How do you decide what to work on first?"
+    ],
+    "key_points": [
+      "Use a structured prioritization framework",
+      "Distinguish urgent from important",
+      "Communicate trade-offs to stakeholders",
+      "Know when to push back or ask for help"
+    ],
+    "sample_answer": "When three P0 issues hit simultaneously, I used the impact/effort matrix. The database connection leak affecting all users took priority over the UI bug affecting 5% and the logging improvement. I communicated the triage decision to stakeholders within 10 minutes and resolved all three within 4 hours."
+  }
+]

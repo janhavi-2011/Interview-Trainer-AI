@@ -1,0 +1,149 @@
+[
+  {
+    "id": "comp_google_001",
+    "company": "Google",
+    "category": "System Design",
+    "topic": "Google-Specific Design Questions",
+    "difficulty": "Hard",
+    "concept": "Google heavily focuses on scalability, distributed systems, and handling massive data. Expect questions about designing systems at Google scale (billions of requests). Key areas: MapReduce, BigTable, Spanner, Borg/Kubernetes, load balancing, and eventual consistency. They also value 'Googliness'—collaboration and handling ambiguity.",
+    "common_questions": [
+      "Design Google Drive",
+      "Design YouTube",
+      "Design Google Maps",
+      "How would you design a distributed cache like Memcached for Google scale?"
+    ],
+    "key_points": [
+      "Focus on scale: billions of users, petabytes of data",
+      "Discuss sharding, replication, and consistency models",
+      "Mention Google technologies (Spanner, Bigtable, Colossus)",
+      "Address latency and availability across global data centers"
+    ],
+    "sample_answer": "To design Google Drive, I'd use a chunk-based storage system similar to Colossus for file storage, with metadata stored in a distributed database like Spanner. Client apps sync via a changelog service. For conflict resolution, I'd use vector clocks. We'd cache frequently accessed metadata in Redis, and use CDN for sharing public links."
+  },
+  {
+    "id": "comp_google_002",
+    "company": "Google",
+    "category": "Behavioral",
+    "topic": "Googliness",
+    "difficulty": "Medium",
+    "concept": "Google looks for 'Googliness'—a mix of curiosity, comfort with ambiguity, and collaborative spirit. They use the STAR method rigorously. Expect questions about handling failure, working with difficult team members, and pushing back on decisions. Show data-driven decision making.",
+    "common_questions": [
+      "Tell me about a time you had to work with ambiguous requirements",
+      "Describe a time you disagreed with your manager",
+      "How do you handle failure?",
+      "Tell me about a time you went above and beyond"
+    ],
+    "key_points": [
+      "Use STAR method (Situation, Task, Action, Result)",
+      "Quantify results with data",
+      "Show you thrive in ambiguity",
+      "Demonstrate intellectual humility"
+    ],
+    "sample_answer": "When our team was asked to build a new service with vague requirements, I set up a 2-day design sprint with stakeholders to define MVP. I created a one-pager with assumptions and got sign-off. We delivered the MVP in 3 weeks, gathered user feedback, and iterated. The final product increased user engagement by 35%."
+  },
+  {
+    "id": "comp_amazon_001",
+    "company": "Amazon",
+    "category": "Behavioral",
+    "topic": "Leadership Principles",
+    "difficulty": "Hard",
+    "concept": "Amazon interviews are heavily behavioral, based on their 16 Leadership Principles: Customer Obsession, Ownership, Invent and Simplify, Are Right A Lot, Learn and Be Curious, Hire and Develop the Best, Insist on Highest Standards, Think Big, Bias for Action, Frugality, Earn Trust, Dive Deep, Have Backbone, Deliver Results, Strive to be Earth's Best Employer, and Success and Scale Bring Broad Responsibility. Every answer must map to at least one principle.",
+    "common_questions": [
+      "Tell me about a time you went above and beyond for a customer",
+      "Describe a time you had to make a decision without all the data",
+      "Give an example of when you pushed back on a decision",
+      "Tell me about a time you simplified a process"
+    ],
+    "key_points": [
+      "Prepare 2 stories per Leadership Principle",
+      "Format: 'At [company], I faced [situation]. I did [action] because [LP principle]. The result was [quantified impact]'",
+      "Focus on 'I' not 'We'",
+      "Always tie back to customer impact"
+    ],
+    "sample_answer": "At my previous company, our API response time degraded by 40% during peak hours. I took ownership and dove deep into the issue, discovering N+1 queries. I invented a caching strategy that simplified the data fetching layer. This reduced response time by 60% and saved $50K/month in infrastructure costs, demonstrating Customer Obsession and Invent & Simplify."
+  },
+  {
+    "id": "comp_amazon_002",
+    "company": "Amazon",
+    "category": "System Design",
+    "topic": "Amazon-Specific Design",
+    "difficulty": "Hard",
+    "concept": "Amazon design questions focus on highly available, fault-tolerant e-commerce and logistics systems. Key concepts: DynamoDB's eventual consistency model, AWS services architecture, handling flash sales (Prime Day), order fulfillment pipelines, and recommendation systems. Expect deep dives into database choices and scaling strategies.",
+    "common_questions": [
+      "Design Amazon's product catalog",
+      "Design Amazon's order fulfillment system",
+      "Design a flash sale system like Prime Day",
+      "Design Amazon's recommendation engine"
+    ],
+    "key_points": [
+      "High availability and fault tolerance are critical",
+      "Use DynamoDB for high-write throughput",
+      "Implement eventual consistency where appropriate",
+      "Use SQS/Kinesis for decoupled, async processing"
+    ],
+    "sample_answer": "For a flash sale system, I'd use a distributed cache (ElastiCache) for inventory counts to handle millions of reads. Writes go through SQS to prevent database overload. DynamoDB with on-demand capacity handles order creation. I'd implement a reservation pattern: reserve item in cache, process payment async, confirm or release inventory based on payment result."
+  },
+  {
+    "id": "comp_microsoft_001",
+    "company": "Microsoft",
+    "category": "Behavioral",
+    "topic": "Growth Mindset",
+    "difficulty": "Medium",
+    "concept": "Microsoft's culture centers on the Growth Mindset—learning from failures, being open to feedback, and continuously improving. They value collaboration and 'One Microsoft' teamwork. Expect questions about how you've learned from mistakes, adapted to change, and worked across teams.",
+    "common_questions": [
+      "Tell me about a time you learned from a failure",
+      "How do you approach learning new technologies?",
+      "Describe a time you collaborated across teams",
+      "How do you handle feedback?"
+    ],
+    "key_points": [
+      "Emphasize learning and adaptability",
+      "Show how you turn failures into growth opportunities",
+      "Highlight cross-team collaboration",
+      "Demonstrate continuous learning habits"
+    ],
+    "sample_answer": "When I failed to anticipate a scaling bottleneck that caused a 3-hour outage, I didn't just fix it—I created a load testing framework and pre-launch checklist that became the team standard. I shared the post-mortem across 3 teams. This embodied the Growth Mindset: learning from failure and sharing that knowledge."
+  },
+  {
+    "id": "comp_tcs_001",
+    "company": "TCS",
+    "category": "HR",
+    "topic": "TCS Culture Fit",
+    "difficulty": "Easy",
+    "concept": "TCS interviews focus on fundamental programming knowledge, aptitude, and behavioral stability. They look for long-term commitment, willingness to learn their proprietary frameworks (TCS BaNCS, Ignite), and adaptability to work across domains. Expect questions about relocation, night shifts, and handling repetitive tasks.",
+    "common_questions": [
+      "Why do you want to join TCS?",
+      "Are you comfortable with relocation and night shifts?",
+      "Where do you see yourself in 5 years?",
+      "How do you handle pressure and deadlines?"
+    ],
+    "key_points": [
+      "Show stability and long-term commitment",
+      "Demonstrate willingness to learn and adapt",
+      "Highlight teamwork and respect for processes",
+      "Be positive about relocation and flexibility"
+    ],
+    "sample_answer": "I want to join TCS because of its global presence and structured learning programs like TCS Xplore. I'm comfortable with relocation as I believe diverse experiences accelerate growth. In 5 years, I see myself as a domain expert contributing to large-scale enterprise projects, having grown through TCS's internal mobility programs."
+  },
+  {
+    "id": "comp_infosys_001",
+    "company": "Infosys",
+    "category": "HR",
+    "topic": "Infosys Values",
+    "difficulty": "Easy",
+    "concept": "Infosys values are built on the CLIFE principles: Client Value, Leadership by Example, Integrity and Transparency, Fairness, and Excellence. They focus heavily on training (Mysore campus) and foundational skills. Expect questions about learning agility, ethics, and how you handle structured environments.",
+    "common_questions": [
+      "What do you know about Infosys?",
+      "How do you ensure quality in your work?",
+      "Tell me about a time you demonstrated integrity",
+      "Why should we hire you over other candidates?"
+    ],
+    "key_points": [
+      "Reference Infosys training and culture",
+      "Emphasize ethics and integrity",
+      "Show commitment to quality and excellence",
+      "Demonstrate learning agility"
+    ],
+    "sample_answer": "I admire Infosys's commitment to excellence, visible in its world-class Mysore training campus. In my last project, I demonstrated integrity by reporting a data discrepancy I found, even though it delayed our sprint. The client appreciated our transparency, strengthening the relationship. I embody the CLIFE values in my daily work."
+  }
+]

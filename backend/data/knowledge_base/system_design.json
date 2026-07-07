@@ -1,0 +1,135 @@
+[
+  {
+    "id": "sd_001",
+    "category": "Fundamentals",
+    "topic": "Scalability Basics",
+    "difficulty": "Medium",
+    "concept": "Scalability means a system can handle increased load by adding resources. Vertical scaling (scaling up) adds more power to existing machines (CPU, RAM). Horizontal scaling (scaling out) adds more machines. Horizontal scaling is preferred for large systems because it has no single machine limit and provides fault tolerance through redundancy.",
+    "common_questions": [
+      "What is the difference between vertical and horizontal scaling?",
+      "When would you choose horizontal over vertical scaling?",
+      "What are the challenges of horizontal scaling?"
+    ],
+    "key_points": [
+      "Vertical: increase single machine resources, simpler, has a ceiling",
+      "Horizontal: add more machines, more complex, no ceiling",
+      "Stateless services scale horizontally easily",
+      "Database scaling is the hardest part"
+    ],
+    "sample_answer": "Vertical scaling is like upgrading your computer — more RAM, better CPU. It's simple but hits hardware limits and creates a single point of failure. Horizontal scaling adds more servers — like adding more lanes to a highway. It's complex (data consistency, load balancing) but provides virtually unlimited capacity and fault tolerance."
+  },
+  {
+    "id": "sd_002",
+    "category": "Fundamentals",
+    "topic": "Load Balancing",
+    "difficulty": "Medium",
+    "concept": "A load balancer distributes incoming traffic across multiple servers to ensure no single server is overwhelmed. Common algorithms: Round Robin (sequential), Least Connections (to least busy server), IP Hash (consistent routing). Load balancers also perform health checks and remove unhealthy servers from the pool. They operate at L4 (transport) or L7 (application) layer.",
+    "common_questions": [
+      "How does a load balancer work?",
+      "What are different load balancing algorithms?",
+      "What is the difference between L4 and L7 load balancing?"
+    ],
+    "key_points": [
+      "Distributes traffic to prevent overload",
+      "Health checks remove dead servers",
+      "Round Robin, Least Connections, IP Hash algorithms",
+      "L4: transport layer, L7: application layer"
+    ],
+    "sample_answer": "A load balancer sits between clients and servers, acting like a traffic cop. Round Robin sends requests sequentially, Least Connections sends to the server with fewest active requests, and IP Hash ensures the same client always reaches the same server (useful for sessions). L4 load balancers route based on network info, while L7 can route based on URL paths or headers."
+  },
+  {
+    "id": "sd_003",
+    "category": "Databases",
+    "topic": "SQL vs NoSQL",
+    "difficulty": "Medium",
+    "concept": "SQL databases (PostgreSQL, MySQL) use structured schemas, ACID transactions, and are ideal for relational data. NoSQL databases (MongoDB, Cassandra, DynamoDB) offer flexible schemas, horizontal scalability, and are ideal for high-write throughput or unstructured data. Choice depends on data structure, consistency requirements, and scale needs.",
+    "common_questions": [
+      "When would you use SQL vs NoSQL?",
+      "What is CAP theorem?",
+      "How do you choose a database for your system?"
+    ],
+    "key_points": [
+      "SQL: structured, ACID, joins, vertical scaling",
+      "NoSQL: flexible schema, horizontal scaling, eventual consistency",
+      "CAP theorem: choose 2 of Consistency, Availability, Partition tolerance",
+      "Many systems use both (polyglot persistence)"
+    ],
+    "sample_answer": "Use SQL when data is relational and consistency is critical (banking, user accounts). Use NoSQL when you need flexible schema, high write throughput, or horizontal scaling (IoT data, session storage, content management). CAP theorem says in distributed systems, during a network partition, you must choose consistency or availability — not both."
+  },
+  {
+    "id": "sd_004",
+    "category": "Databases",
+    "topic": "Database Sharding",
+    "difficulty": "Hard",
+    "concept": "Sharding partitions a database into smaller, faster parts called shards, each holding a subset of data. Sharding key determines data distribution. Common strategies: hash-based (consistent hashing), range-based, or directory-based. Challenges include cross-shard queries, resharding, and hotspot management. Sharding is a last resort — try caching, read replicas, and connection pooling first.",
+    "common_questions": [
+      "What is database sharding?",
+      "How do you choose a sharding key?",
+      "What are the challenges of sharding?"
+    ],
+    "key_points": [
+      "Partition data across multiple database instances",
+      "Choose shard key carefully (even distribution, query patterns)",
+      "Avoid cross-shard queries",
+      "Resharding is expensive — plan ahead"
+    ],
+    "sample_answer": "Sharding splits a large database into smaller pieces distributed across servers. If you have users table, you might shard by user_id hash. Shard 1: users with IDs 1-1M, Shard 2: 1M-2M, etc. Key challenges: joins across shards are slow, resharding when a shard grows too large is complex, and a poor shard key creates hotspots where one shard gets disproportionate traffic."
+  },
+  {
+    "id": "sd_005",
+    "category": "Caching",
+    "topic": "Caching Strategies",
+    "difficulty": "Medium",
+    "concept": "Caching stores frequently accessed data in fast memory (Redis, Memcached) to reduce database load and latency. Cache-aside: application checks cache first, loads from DB on miss. Write-through: write to cache and DB simultaneously. Write-behind: write to cache, asynchronously to DB. Eviction policies: LRU, LFU, FIFO. Cache invalidation is one of the hardest problems in CS.",
+    "common_questions": [
+      "What are different caching strategies?",
+      "How do you handle cache invalidation?",
+      "When would you use Redis vs Memcached?"
+    ],
+    "key_points": [
+      "Cache-aside is most common and simplest",
+      "Write-through: consistent but slower writes",
+      "Write-behind: fast writes but risk of data loss",
+      "Cache invalidation strategies: TTL, event-driven, version-based"
+    ],
+    "sample_answer": "Cache-aside is like keeping a cheat sheet — check it first, go to the textbook if not found. Write-through updates both cheat sheet and textbook simultaneously. Write-behind updates the cheat sheet immediately and syncs to textbook later (faster but riskier). For invalidation, I use TTL for data that changes periodically and event-driven invalidation for real-time updates."
+  },
+  {
+    "id": "sd_006",
+    "category": "Design Problems",
+    "topic": "Design URL Shortener",
+    "difficulty": "Medium",
+    "concept": "A URL shortener (like bit.ly) maps long URLs to short codes. Key components: hash function for generating short codes, database for mapping storage, redirect service, and analytics. Use base62 encoding (a-z, A-Z, 0-9) for short codes. 7 characters = 62^7 ≈ 3.5 trillion unique URLs. Cache hot URLs in Redis. Scale with horizontal application servers and database sharding.",
+    "common_questions": [
+      "Design a URL shortener like bit.ly",
+      "How would you generate unique short URLs?",
+      "How do you handle analytics for a URL shortener?"
+    ],
+    "key_points": [
+      "Base62 encoding for short codes",
+      "7 chars = 3.5 trillion combinations",
+      "Cache hot URLs in Redis for fast redirect",
+      "Analytics: async event processing pipeline"
+    ],
+    "sample_answer": "API: POST /shorten takes long_url, returns short_code. GET /{short_code} returns 301 redirect. Generate short codes using a counter + base62 encoding or MD5 hash + first 7 chars. Store in DynamoDB (key: short_code, value: long_url). Cache popular URLs in Redis with 80% cache hit rate. For analytics, write click events to Kafka, process with Flink, store in ClickHouse."
+  },
+  {
+    "id": "sd_007",
+    "category": "Design Problems",
+    "topic": "Design Chat System",
+    "difficulty": "Hard",
+    "concept": "A chat system (like WhatsApp) needs real-time messaging, online status, and message history. Use WebSocket for real-time bidirectional communication. Message flow: sender → WebSocket server → message queue → WebSocket server → receiver. Store messages in Cassandra (high write throughput). Use Redis for online status and session management. Group chats need fan-out to multiple connections.",
+    "common_questions": [
+      "Design a chat application like WhatsApp",
+      "How do you implement real-time messaging?",
+      "How do you handle group chats at scale?"
+    ],
+    "key_points": [
+      "WebSocket for real-time bidirectional communication",
+      "Message queue for reliable delivery",
+      "Cassandra for message storage (high writes)",
+      "Redis for presence/online status"
+    ],
+    "sample_answer": "Clients connect via WebSocket to a connection server. Messages flow: sender → connection server → Kafka topic → message processor → connection server → recipient's WebSocket. Store messages in Cassandra partitioned by conversation_id. Online status in Redis with TTL. For group chats, maintain a connection mapping and fan-out messages to all group members' connections. Push notifications for offline users via FCM/APNS."
+  }
+]

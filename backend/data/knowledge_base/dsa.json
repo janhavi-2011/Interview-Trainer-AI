@@ -1,0 +1,182 @@
+[
+  {
+    "id": "dsa_001",
+    "category": "Arrays",
+    "topic": "Two Pointer Technique",
+    "difficulty": "Medium",
+    "concept": "The two pointer technique uses two indices to traverse an array from different directions. It is commonly used for searching pairs in a sorted array, removing duplicates, and solving container-with-most-water problems. Time complexity is typically O(n) instead of O(n²) for brute force.",
+    "common_questions": [
+      "How do you find a pair with a given sum in a sorted array?",
+      "How do you remove duplicates from a sorted array in-place?",
+      "Explain the container with most water problem."
+    ],
+    "key_points": [
+      "Works on sorted arrays",
+      "Reduces O(n²) to O(n)",
+      "Two variants: same direction and opposite direction"
+    ],
+    "sample_code": "def two_sum_sorted(arr, target):\n    left, right = 0, len(arr) - 1\n    while left < right:\n        s = arr[left] + arr[right]\n        if s == target:\n            return [left, right]\n        elif s < target:\n            left += 1\n        else:\n            right -= 1\n    return []"
+  },
+  {
+    "id": "dsa_002",
+    "category": "Arrays",
+    "topic": "Sliding Window",
+    "difficulty": "Medium",
+    "concept": "The sliding window technique maintains a window of elements that slides through the array. It is used for finding subarrays with specific properties like maximum sum subarray of size k, longest substring without repeating characters, and minimum window substring. Time complexity is O(n).",
+    "common_questions": [
+      "Find the maximum sum subarray of size k",
+      "Find the longest substring without repeating characters",
+      "Find the minimum window substring"
+    ],
+    "key_points": [
+      "Window can be fixed or variable size",
+      "Avoids recomputing overlapping subproblems",
+      "Shrink window from left, expand from right"
+    ],
+    "sample_code": "def max_sum_subarray(arr, k):\n    window_sum = sum(arr[:k])\n    max_sum = window_sum\n    for i in range(k, len(arr)):\n        window_sum += arr[i] - arr[i - k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum"
+  },
+  {
+    "id": "dsa_003",
+    "category": "Linked Lists",
+    "topic": "Fast and Slow Pointers",
+    "difficulty": "Medium",
+    "concept": "The fast and slow pointer technique (Floyd's cycle detection) uses two pointers moving at different speeds. If they meet, a cycle exists. This technique also finds the middle of a linked list in one pass and detects the start of a cycle. Time complexity is O(n), space is O(1).",
+    "common_questions": [
+      "How do you detect a cycle in a linked list?",
+      "How do you find the middle of a linked list?",
+      "How do you find the start node of a cycle?"
+    ],
+    "key_points": [
+      "Fast pointer moves 2 steps, slow moves 1",
+      "If they meet → cycle exists",
+      "To find cycle start: reset one pointer to head, move both 1 step"
+    ],
+    "sample_code": "def has_cycle(head):\n    slow = fast = head\n    while fast and fast.next:\n        slow = slow.next\n        fast = fast.next.next\n        if slow == fast:\n            return True\n    return False"
+  },
+  {
+    "id": "dsa_004",
+    "category": "Trees",
+    "topic": "Binary Tree Traversals",
+    "difficulty": "Easy",
+    "concept": "Binary tree traversals visit every node in a specific order. In-order (left, root, right) gives sorted order for BST. Pre-order (root, left, right) is used for serialization. Post-order (left, right, root) is used for deletion and expression evaluation. Level-order uses BFS with a queue.",
+    "common_questions": [
+      "Implement in-order traversal iteratively",
+      "What is the difference between BFS and DFS in trees?",
+      "How do you perform level-order traversal?"
+    ],
+    "key_points": [
+      "In-order: sorted output for BST",
+      "Pre-order: used for tree copying",
+      "Level-order: BFS using queue"
+    ],
+    "sample_code": "def inorder(root):\n    result = []\n    stack = []\n    curr = root\n    while curr or stack:\n        while curr:\n            stack.append(curr)\n            curr = curr.left\n        curr = stack.pop()\n        result.append(curr.val)\n        curr = curr.right\n    return result"
+  },
+  {
+    "id": "dsa_005",
+    "category": "Trees",
+    "topic": "BST Operations",
+    "difficulty": "Medium",
+    "concept": "A Binary Search Tree maintains the property that left child < parent < right child. Common operations include search O(h), insert O(h), delete O(h), find min/max, and validate BST. Balancing (AVL, Red-Black) ensures O(log n) operations. In-order traversal of BST gives sorted output.",
+    "common_questions": [
+      "How do you validate a BST?",
+      "How do you find the Kth smallest element in a BST?",
+      "How do you delete a node with two children in a BST?"
+    ],
+    "key_points": [
+      "Left < Root < Right for all nodes",
+      "In-order gives sorted sequence",
+      "Deletion: replace with in-order successor or predecessor"
+    ],
+    "sample_code": "def is_valid_bst(root, low=float('-inf'), high=float('inf')):\n    if not root:\n        return True\n    if root.val <= low or root.val >= high:\n        return False\n    return (is_valid_bst(root.left, low, root.val) and\n            is_valid_bst(root.right, root.val, high))"
+  },
+  {
+    "id": "dsa_006",
+    "category": "Graphs",
+    "topic": "BFS and DFS",
+    "difficulty": "Medium",
+    "concept": "BFS explores nodes level by level using a queue, finding shortest paths in unweighted graphs. DFS explores as deep as possible using recursion or a stack, useful for cycle detection, topological sort, and connected components. BFS uses O(V) space for queue, DFS uses O(V) for recursion stack.",
+    "common_questions": [
+      "When would you use BFS over DFS?",
+      "How do you detect a cycle in a directed graph?",
+      "How do you perform topological sort?"
+    ],
+    "key_points": [
+      "BFS: shortest path in unweighted graphs",
+      "DFS: cycle detection, topological sort",
+      "Both: O(V+E) time complexity"
+    ],
+    "sample_code": "from collections import deque\ndef bfs(graph, start):\n    visited = {start}\n    queue = deque([start])\n    order = []\n    while queue:\n        node = queue.popleft()\n        order.append(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return order"
+  },
+  {
+    "id": "dsa_007",
+    "category": "Graphs",
+    "topic": "Dijkstra's Algorithm",
+    "difficulty": "Hard",
+    "concept": "Dijkstra's algorithm finds the shortest path from a source node to all other nodes in a weighted graph with non-negative weights. It uses a min-heap priority queue. Time complexity is O((V+E) log V) with binary heap. It does not work with negative weight edges.",
+    "common_questions": [
+      "How does Dijkstra's algorithm work?",
+      "Why doesn't Dijkstra work with negative weights?",
+      "What is the time complexity of Dijkstra's with a min-heap?"
+    ],
+    "key_points": [
+      "Greedy: always pick minimum distance node",
+      "Use min-heap for efficient extraction",
+      "Fails with negative weights — use Bellman-Ford instead"
+    ],
+    "sample_code": "import heapq\ndef dijkstra(graph, start):\n    dist = {node: float('inf') for node in graph}\n    dist[start] = 0\n    pq = [(0, start)]\n    while pq:\n        d, node = heapq.heappop(pq)\n        if d > dist[node]:\n            continue\n        for neighbor, weight in graph[node]:\n            new_dist = d + weight\n            if new_dist < dist[neighbor]:\n                dist[neighbor] = new_dist\n                heapq.heappush(pq, (new_dist, neighbor))\n    return dist"
+  },
+  {
+    "id": "dsa_008",
+    "category": "Dynamic Programming",
+    "topic": "Knapsack Problem",
+    "difficulty": "Hard",
+    "concept": "The 0/1 Knapsack problem selects items with maximum value without exceeding weight capacity. Each item can be taken at most once. DP solution uses a 2D table dp[i][w] = max value using first i items with capacity w. Time O(n*W), space can be optimized to O(W).",
+    "common_questions": [
+      "Explain the 0/1 Knapsack problem and its DP solution",
+      "How do you optimize space in the knapsack problem?",
+      "What is the difference between 0/1 and unbounded knapsack?"
+    ],
+    "key_points": [
+      "dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i]] + val[i])",
+      "Space optimization: use 1D array, iterate backwards",
+      "Unbounded: items can be reused"
+    ],
+    "sample_code": "def knapsack_01(weights, values, capacity):\n    n = len(weights)\n    dp = [0] * (capacity + 1)\n    for i in range(n):\n        for w in range(capacity, weights[i] - 1, -1):\n            dp[w] = max(dp[w], dp[w - weights[i]] + values[i])\n    return dp[capacity]"
+  },
+  {
+    "id": "dsa_009",
+    "category": "Dynamic Programming",
+    "topic": "Longest Common Subsequence",
+    "difficulty": "Hard",
+    "concept": "LCS finds the longest subsequence common to two strings. Unlike substrings, subsequences need not be contiguous. DP table dp[i][j] represents LCS length of first i chars of s1 and first j chars of s2. If chars match, dp[i][j]=dp[i-1][j-1]+1; else dp[i][j]=max(dp[i-1][j], dp[i][j-1]).",
+    "common_questions": [
+      "How do you find the LCS of two strings?",
+      "What is the time and space complexity of LCS?",
+      "How do you reconstruct the actual LCS string?"
+    ],
+    "key_points": [
+      "Match: dp[i][j] = dp[i-1][j-1] + 1",
+      "No match: dp[i][j] = max(dp[i-1][j], dp[i][j-1])",
+      "Time: O(m*n), Space: O(m*n) or O(min(m,n))"
+    ],
+    "sample_code": "def lcs(s1, s2):\n    m, n = len(s1), len(s2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s1[i-1] == s2[j-1]:\n                dp[i][j] = dp[i-1][j-1] + 1\n            else:\n                dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n    return dp[m][n]"
+  },
+  {
+    "id": "dsa_010",
+    "category": "Sorting",
+    "topic": "QuickSort",
+    "difficulty": "Medium",
+    "concept": "QuickSort is a divide-and-conquer algorithm that picks a pivot, partitions the array around it, and recursively sorts the subarrays. Average time complexity is O(n log n), worst case is O(n²) when pivot is always min/max. It is in-place and has good cache performance. Randomized pivot selection avoids worst case.",
+    "common_questions": [
+      "How does QuickSort work and what is its time complexity?",
+      "How do you choose a good pivot?",
+      "Compare QuickSort vs MergeSort"
+    ],
+    "key_points": [
+      "Average: O(n log n), Worst: O(n²)",
+      "In-place sorting, cache-friendly",
+      "Randomized pivot avoids worst case"
+    ],
+    "sample_code": "def quicksort(arr, low, high):\n    if low < high:\n        pi = partition(arr, low, high)\n        quicksort(arr, low, pi - 1)\n        quicksort(arr, pi + 1, high)\n\ndef partition(arr, low, high):\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i+1], arr[high] = arr[high], arr[i+1]\n    return i + 1"
+  }
+]

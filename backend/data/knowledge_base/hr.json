@@ -1,0 +1,154 @@
+[
+  {
+    "id": "hr_001",
+    "category": "Introduction",
+    "topic": "Tell me about yourself",
+    "difficulty": "Easy",
+    "concept": "This is typically the opening question. Structure your answer using the Present-Past-Future framework. Start with your current role, highlight relevant past experiences, and connect to the position you are applying for. Keep it concise (90-120 seconds). Focus on professional highlights, not personal biography.",
+    "common_questions": [
+      "Tell me about yourself",
+      "Walk me through your resume",
+      "How would you describe yourself professionally?"
+    ],
+    "key_points": [
+      "Use Present-Past-Future framework",
+      "Keep it under 2 minutes",
+      "Tailor to the job description",
+      "Highlight achievements, not just responsibilities"
+    ],
+    "sample_answer": "I'm currently a software engineer at XYZ, where I lead a team of 4 building microservices. Before that, I worked at ABC on a customer-facing platform that grew to 1M users. I'm now looking to bring my experience in scalable systems to a larger engineering organization like yours."
+  },
+  {
+    "id": "hr_002",
+    "category": "Strengths & Weaknesses",
+    "topic": "Greatest Strength",
+    "difficulty": "Easy",
+    "concept": "When discussing strengths, choose 2-3 that are directly relevant to the role. Use the STAR method (Situation, Task, Action, Result) to provide evidence. Avoid generic strengths like 'hard worker.' Instead, be specific: 'I excel at breaking down complex technical problems into manageable components.'",
+    "common_questions": [
+      "What is your greatest strength?",
+      "What are your top 3 strengths?",
+      "What makes you stand out from other candidates?"
+    ],
+    "key_points": [
+      "Pick strengths relevant to the job",
+      "Back each strength with a specific example",
+      "Use metrics/results when possible",
+      "Be authentic, not boastful"
+    ],
+    "sample_answer": "My greatest strength is systematic problem-solving. At my current role, I reduced API response time by 60% by breaking the problem into database query optimization, caching strategy, and payload reduction — addressing each systematically."
+  },
+  {
+    "id": "hr_003",
+    "category": "Strengths & Weaknesses",
+    "topic": "Greatest Weakness",
+    "difficulty": "Medium",
+    "concept": "Choose a real weakness that is not critical to the role, and always discuss what you are doing to improve. Avoid fake weaknesses like 'I work too hard.' Show self-awareness and growth mindset. The interviewer wants to see honesty and evidence of professional development.",
+    "common_questions": [
+      "What is your greatest weakness?",
+      "What area are you working to improve?",
+      "What is something you struggle with?"
+    ],
+    "key_points": [
+      "Pick a real but non-critical weakness",
+      "Show self-awareness",
+      "Explain specific improvement actions",
+      "Demonstrate progress with examples"
+    ],
+    "sample_answer": "I used to struggle with delegating tasks, wanting to handle everything myself. Over the past year, I have been using project management tools and setting weekly delegation goals. I now regularly assign 40% of my previous workload to junior team members, which has improved team productivity and my own focus on strategic work."
+  },
+  {
+    "id": "hr_004",
+    "category": "Behavioral",
+    "topic": "Conflict Resolution",
+    "difficulty": "Medium",
+    "concept": "Conflict resolution questions test your interpersonal skills and professionalism. Use the STAR method to describe a specific situation. Show that you listen first, seek to understand the other perspective, find common ground, and focus on the project goal rather than personal ego. Never speak negatively about colleagues.",
+    "common_questions": [
+      "Tell me about a time you had a conflict at work",
+      "How do you handle disagreements with teammates?",
+      "Describe a time you disagreed with your manager"
+    ],
+    "key_points": [
+      "Listen before responding",
+      "Focus on the problem, not the person",
+      "Seek win-win solutions",
+      "Escalate professionally if needed"
+    ],
+    "sample_answer": "My teammate and I disagreed on the database schema for a new feature. They wanted denormalization for performance, I advocated for normalization for consistency. I suggested we both prototype our approaches and benchmark them. The data showed a hybrid approach worked best, and we collaborated on the final design."
+  },
+  {
+    "id": "hr_005",
+    "category": "Behavioral",
+    "topic": "Handling Failure",
+    "difficulty": "Medium",
+    "concept": "Failure questions assess accountability and learning. Choose a real failure where you had significant responsibility. Clearly state what went wrong, take ownership without blaming others, explain what you learned, and describe how you applied that learning to prevent similar failures. Show resilience and growth.",
+    "common_questions": [
+      "Tell me about a time you failed",
+      "Describe a project that didn't go as planned",
+      "What is your biggest professional mistake?"
+    ],
+    "key_points": [
+      "Take full ownership",
+      "Explain the root cause analysis",
+      "Share specific lessons learned",
+      "Show how you applied the learning"
+    ],
+    "sample_answer": "I once deployed a feature without proper load testing, causing a 2-hour outage during peak hours. I immediately rolled back, communicated transparently with stakeholders, and created a post-mortem. I then implemented mandatory load testing in our CI/CD pipeline, and we never had a similar incident."
+  },
+  {
+    "id": "hr_006",
+    "category": "Motivation",
+    "topic": "Why this company",
+    "difficulty": "Easy",
+    "concept": "Research the company thoroughly before the interview. Reference specific products, recent news, company values, or engineering blog posts. Connect your skills and career goals to what the company does. Show genuine enthusiasm and explain how you can contribute to their mission.",
+    "common_questions": [
+      "Why do you want to work here?",
+      "Why are you interested in this company?",
+      "What attracted you to this role?"
+    ],
+    "key_points": [
+      "Reference specific company projects or values",
+      "Connect your skills to their needs",
+      "Show genuine research and interest",
+      "Avoid generic answers that apply anywhere"
+    ],
+    "sample_answer": "I have been following your open-source work on distributed systems, especially the Kafka connector library. Your engineering blog post on handling 10M concurrent connections resonated with my experience at scale. I am excited about contributing to these systems while learning from the team that built them."
+  },
+  {
+    "id": "hr_007",
+    "category": "Leadership",
+    "topic": "Leading a Team",
+    "difficulty": "Hard",
+    "concept": "Leadership questions evaluate your ability to guide, motivate, and develop others. Describe how you set clear goals, delegate effectively, provide constructive feedback, and create an inclusive environment. Highlight specific outcomes: team growth, project success metrics, or team member promotions.",
+    "common_questions": [
+      "Tell me about a time you led a team",
+      "How do you motivate team members?",
+      "Describe your leadership style"
+    ],
+    "key_points": [
+      "Set clear expectations and goals",
+      "Delegate based on strengths and growth areas",
+      "Give regular constructive feedback",
+      "Celebrate wins and learn from setbacks"
+    ],
+    "sample_answer": "When I became tech lead for our payments team, I instituted weekly 1-on-1s focused on career growth, not just project status. I mapped each member's strengths to project needs and rotated on-call duties to build skills. Over 6 months, two junior engineers were promoted and our deployment frequency doubled."
+  },
+  {
+    "id": "hr_008",
+    "category": "Career Goals",
+    "topic": "Where do you see yourself in 5 years",
+    "difficulty": "Medium",
+    "concept": "This question assesses ambition, planning, and alignment with the company. Show a clear career trajectory that aligns with the role. Balance between being specific enough to show direction and flexible enough to adapt. Connect your growth plan to how you will add increasing value to the company.",
+    "common_questions": [
+      "Where do you see yourself in 5 years?",
+      "What are your career goals?",
+      "What is your long-term career plan?"
+    ],
+    "key_points": [
+      "Show direction, not rigid plans",
+      "Align with the company's growth path",
+      "Balance technical depth and scope of impact",
+      "Demonstrate commitment to the field"
+    ],
+    "sample_answer": "In 5 years, I see myself as a senior engineer leading critical infrastructure projects. I want to deepen my expertise in distributed systems while expanding my mentoring responsibilities. This role excites me because your team works on exactly the kind of scale challenges I want to master."
+  }
+]

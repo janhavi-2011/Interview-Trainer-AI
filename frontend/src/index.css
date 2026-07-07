@@ -1,0 +1,41 @@
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Fix for mobile viewport height (100vh issue on mobile browsers) */
+html, body {
+  height: -webkit-fill-available;
+}
+min-h-screen {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html, body {
+  background-color: #F6F5F1;
+}
+html.dark, html.dark body {
+  background-color: #121218;
+}
