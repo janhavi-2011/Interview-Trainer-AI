@@ -124,24 +124,23 @@ Interview-Trainer-AI
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-## Login Page
+### Login
 
-(Add Screenshot Here)
+![Login](screenshots/login.png)
 
-## Dashboard
+### Dashboard
 
-(Add Screenshot Here)
+![Dashboard](screenshots/dashboard.png)
 
-## Interview Question Generation
+### AI Interview
 
-(Add Screenshot Here)
+![Interview](screenshots/interview.png)
 
-## AI Evaluation
+### Analytics
 
-(Add Screenshot Here)
-
+![Analytics](screenshots/analytics.png)
 ---
 
 # 🔮 Future Enhancements
