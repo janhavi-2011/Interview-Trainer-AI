@@ -870,49 +870,28 @@ Frontend UI
 
 ## 🔐 Authentication
 
-- Login Page
+### Login Page
 
-- Register Page
+![Login Page](screenshots/login.png)
 
----
 
 ## 🏠 Dashboard
 
-- Dashboard Overview
+### Dashboard Overview
 
-- Analytics Cards
-
----
-
-## 🎯 Interview Module
-
-- Interview Setup
-
-- Generated Questions
+![Dashboard](screenshots/dashboard.png)
 
 ---
 
-## 🤖 AI Evaluation
+## 🎯 AI Interview Question Generator
 
-- Answer Evaluation
-
-- AI Feedback
+![Question Generator](screenshots/interview.png)
 
 ---
 
-## 📈 Analytics
+## 📈 Performance Analytics
 
-- Performance Dashboard
-
-- Charts
-
----
-
-## 🛣 Learning Roadmap
-
-- Personalized Roadmap
-
-- Recommended Topics
+![Performance Dashboard](screenshots/analytics.png)
 
 ---
 
@@ -1167,10 +1146,6 @@ Bundelkhand Institute of Engineering & Technology (BIET), Jhansi
 ### GitHub
 
 https://github.com/janhavi-2011
-
-### LinkedIn
-
-https://www.linkedin.com/in/janhavi-maurya/
 
 ---
 
