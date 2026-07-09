@@ -4,14 +4,14 @@ from app.core.config import get_settings
 import json
 from typing import List, Optional
 
+
 settings = get_settings()
 
 
 class ChromaService:
     def __init__(self):
-        self.client = chromadb.HttpClient(
-            host=settings.chroma_host,
-            port=settings.chroma_port,
+        self.client = chromadb.PersistentClient(
+            path="./chroma_db"
         )
 
     def get_or_create_collection(self, collection_name: str):

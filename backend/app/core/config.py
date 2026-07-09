@@ -24,9 +24,10 @@ class Settings(BaseSettings):
     # MongoDB
     mongodb_uri: str
 
-    # ChromaDB
-    chroma_host: str = "localhost"
-    chroma_port: int = 8000
+    # # ChromaDB
+    # chroma_host: str = "localhost"
+    # chroma_port: int = 8000
+    # chroma_ssl: bool = False
 
     # App
     app_env: str = "development"
