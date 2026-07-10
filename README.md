@@ -71,21 +71,6 @@ The platform acts as a virtual AI interview coach that continuously learns from 
 
 ---
 
-# 🎥 Live Demo
-
-### 🌐 Frontend
-
-**Coming Soon**
-
-### ⚙️ Backend API
-
-**Coming Soon**
-
-### 📄 API Documentation (Swagger)
-
-**Coming Soon**
-
----
 
 # 📸 Project Preview
 
